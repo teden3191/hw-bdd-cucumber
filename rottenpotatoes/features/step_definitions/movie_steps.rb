@@ -6,7 +6,7 @@ Given /the following movies exist/ do |movies_table|
     # you should arrange to add that movie to the database here.
     Movie.create!(movie)
   end
-  #fail "Unimplemented"
+#  fail "Unimplemented"
 end
 
 Then /(.*) seed movies should exist/ do | n_seeds |
@@ -38,7 +38,7 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
       check(rating)
     end
   end
-  #fail "Unimplemented"
+#  fail "Unimplemented"
 end
 
 Then /I should see movies rated: (,*)/ do |rating_list|
@@ -46,7 +46,8 @@ Then /I should see movies rated: (,*)/ do |rating_list|
     assert page.has_xpath?('//*', :text => "#{rating}")
   end
 end
- Then /I should not see movies rated: (,*)/ do |rating_list|
+
+Then /I should not see movies rated: (,*)/ do |rating_list|
   rating_list.split(/,\s*/).each do |rating|
     assert page.has_no_xpath?('//*', :text => "#{rating}")
   end
